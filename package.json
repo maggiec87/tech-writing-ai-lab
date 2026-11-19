@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start --host 127.0.0.1",
     "build": "docusaurus build",
-    "serve": "docusaurus serve",
+    "serve": "docusaurus serve --host 127.0.0.1 --port 3000",
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "typecheck": "tsc --noEmit"

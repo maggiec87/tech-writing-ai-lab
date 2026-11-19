@@ -44,3 +44,21 @@
 .markdown h3 {
   letter-spacing: -0.025em;
 }
+
+/* GTranslate floating widget - top right, below navbar */
+#gt_float_wrapper {
+  position: fixed !important;
+  top: 75px !important;
+  right: 20px !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 1000 !important;
+}
+
+/* Mobile adjustment */
+@media screen and (max-width: 996px) {
+  #gt_float_wrapper {
+    top: 65px !important;
+    right: 12px !important;
+  }
+}
