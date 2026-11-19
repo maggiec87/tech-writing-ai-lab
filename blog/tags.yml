@@ -1,0 +1,9 @@
+about:
+  label: About
+  permalink: /about
+  description: About this website and its author.
+
+learning:
+  label: Learning
+  permalink: /learning
+  description: Learning notes and insights.

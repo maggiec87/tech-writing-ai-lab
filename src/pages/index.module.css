@@ -1,0 +1,250 @@
+.hero {
+  padding: 6.5rem 0 6rem;
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(0, 140, 255, 0.13),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      var(--ifm-background-color),
+      var(--ifm-background-surface-color)
+    );
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.eyebrow {
+  color: var(--ifm-color-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+  margin: 0;
+  max-width: 900px;
+}
+
+.heroTitle span {
+  color: var(--ifm-color-primary);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+  margin: 1.4rem 0 0.8rem;
+}
+
+.heroText {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5.2rem;
+}
+
+.sectionIntro {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.sectionIntro h2,
+.splitSection h2,
+.aboutSection h2 {
+  letter-spacing: -0.035em;
+}
+
+.sectionIntro > p:last-child {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+.focusGrid,
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.focusCard,
+.projectCard {
+  padding: 1.6rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  background: var(--ifm-background-surface-color);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease;
+}
+
+.focusCard:hover,
+.projectCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--ifm-color-primary);
+}
+
+.cardNumber {
+  color: var(--ifm-color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.focusCard h3,
+.projectCard h3 {
+  font-size: 1.25rem;
+  margin: 1.2rem 0 0.7rem;
+}
+
+.focusCard p,
+.projectCard p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.7;
+}
+
+.focusCard a,
+.projectCard a,
+.aboutSection a {
+  font-weight: 650;
+}
+
+.projectSection {
+  padding: 5rem 0;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  color: var(--ifm-color-primary-darkest);
+  background: var(--ifm-color-primary-lightest);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.projectCard h3 {
+  margin-top: 1rem;
+}
+
+.stack {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.splitSection {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+
+.splitSection p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.8;
+}
+
+.splitSection .button {
+  margin-top: 0.8rem;
+}
+
+.quotePanel {
+  padding: 2rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  background: var(--ifm-background-surface-color);
+  border-radius: 0 14px 14px 0;
+}
+
+.quoteMark {
+  color: var(--ifm-color-primary);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.quotePanel p {
+  color: var(--ifm-font-color-base);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.quoteCaption {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.82rem;
+}
+
+.latestSection {
+  padding: 3.2rem 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.latestInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.latestInner h2 {
+  margin-bottom: 0.5rem;
+}
+
+.latestInner p:last-child {
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.aboutSection {
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+  max-width: 900px;
+}
+
+.aboutSection h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.aboutSection > p:not(.eyebrow) {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 4.5rem 0;
+  }
+
+  .focusGrid,
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .splitSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .latestInner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
