@@ -1,10 +1,15 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
 export default function Root({ children }: { children: ReactNode }) {
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
   useEffect(() => {
-    console.log('[GTranslate] Root mounted');
+    // Disable GTranslate during local development
+    if (process.env.NODE_ENV !== 'production') {
+      return;
+    }
 
     (window as any).gtranslateSettings = {
       default_language: 'en',
@@ -13,31 +18,62 @@ export default function Root({ children }: { children: ReactNode }) {
       wrapper_selector: '.gtranslate_wrapper',
     };
 
-    console.log('[GTranslate] Settings:', (window as any).gtranslateSettings);
+    if (!document.getElementById('gtranslate-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'gtranslate-widget-script';
+      script.src = 'https://cdn.gtranslate.net/widgets/latest/float.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
-    const script = document.createElement('script');
-    script.id = 'gtranslate-widget-script';
-    script.src = 'https://cdn.gtranslate.net/widgets/latest/float.js';
-    script.async = true;
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      return;
+    }
 
-    script.onload = () => {
-      console.log('[GTranslate] Script loaded successfully');
+    const wrapper = document.querySelector('.gtranslate_wrapper');
+    if (!wrapper) return;
+
+    const checkLanguage = () => {
+      const languageCode = wrapper
+        .querySelector('.gt-lang-code')
+        ?.textContent?.trim()
+        .toLowerCase();
+
+      if (languageCode) {
+        setShowDisclaimer(languageCode !== 'en');
+      }
     };
 
-    script.onerror = () => {
-      console.error('[GTranslate] Script failed to load');
-    };
+    checkLanguage();
 
-    document.body.appendChild(script);
+    const observer = new MutationObserver(checkLanguage);
+    observer.observe(wrapper, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
 
-    return () => {
-      script.remove();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
     <>
-      <div className="gtranslate_wrapper" />
+      {process.env.NODE_ENV === 'production' && (
+        <div className="gtranslate_wrapper" />
+      )}
+
+      {showDisclaimer && (
+        <div className="translation-disclaimer">
+          <strong>Translation Disclaimer:</strong> This page is
+          automatically translated for reference purposes only.
+          In case of any translation errors or inconsistencies,
+          please refer to the English version, which is the
+          authoritative source.
+        </div>
+      )}
+
       {children}
     </>
   );

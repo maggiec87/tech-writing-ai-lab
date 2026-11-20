@@ -1,11 +1,25 @@
-# Glossary
+﻿---
+title: "Resources"
+description: "A collection of useful references, tools, and learning materials."
+---
 
-A growing glossary of technical-writing, documentation-engineering,
-and AI terminology.
+## Overview
 
-## Topics
+Introduce the topic and explain its purpose and scope.
 
-- Technical Writing
-- Documentation Engineering
-- Software Development
-- Artificial Intelligence
+## Key Concepts
+
+Explain the essential concepts, terminology, and principles.
+
+## Practical Guidance
+
+Provide practical methods, workflows, examples, or implementation steps.
+
+## Best Practices
+
+Describe recommended practices and common pitfalls.
+
+## Further Reading
+
+- Official documentation
+- Related technical resources

@@ -22,14 +22,26 @@ export default function Projects(): JSX.Element {
 
         <ul>
           <li>
-            <Link to="/learn/projects-case-studies/pdf-exporter">
-              Modular User Guide PDF Exporter
+            <Link to="/learn/documentation-engineering/projects/overview">
+              Documentation Engineering Projects
             </Link>
           </li>
 
           <li>
-            <Link to="/learn/projects-case-studies/ai-documentation-assistant">
-              AI Documentation Assistant
+            <Link to="/learn/ai-engineering/projects/overview">
+              AI Engineering Projects
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/learn/technical-writing/projects/overview">
+              Technical Writing Projects
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/learn/ai-product-ux/projects/overview">
+              AI Product & UX Projects
             </Link>
           </li>
         </ul>

@@ -9,49 +9,56 @@ const focusAreas = [
     number: '01',
     title: 'Technical Writing',
     description:
-      'User-centered documentation, information architecture, content design, and clear technical communication.',
-    link: '/learn/fundamentals/overview',
+      'Technical communication, user documentation, information architecture, and content design. Study how leading companies create effective documentation and apply those insights to practical improvements.',
+    link: '/learn/technical-writing/learn/overview',
   },
   {
     number: '02',
     title: 'Documentation Engineering',
     description:
-      'Docs-as-code workflows, static documentation sites, automation, version control, and publishing.',
-    link: '/learn/documentation-engineering/overview',
+      'The systems and engineering practices behind modern documentation: docs-as-code, content architecture, automation, testing, versioning, and publishing.',
+    link: '/learn/documentation-engineering/learn/overview',
   },
   {
     number: '03',
-    title: 'AI & Automation',
+    title: 'AI Engineering',
     description:
-      'LLMs, prompt design, RAG, AI agents, and practical ways to improve knowledge work.',
-    link: '/learn/ai-automation/overview',
+      'The technical foundations of AI applications, including LLMs, prompt engineering, RAG, AI agents, Python integration, testing, and evaluation.',
+    link: '/learn/ai-engineering/learn/overview',
+  },
+  {
+    number: '04',
+    title: 'AI Product & UX',
+    description:
+      'AI product development and user experience: product discovery, user research, requirements, interaction design, usability evaluation, and responsible AI.',
+    link: '/learn/ai-product-ux/learn/overview',
   },
 ];
 
-const projects = [
+const selectedWork = [
   {
     status: 'In Progress',
     title: 'Modular User Guide PDF Exporter',
     description:
-      'A Python-based workflow for exporting modular online product guides into structured PDF manuals.',
+      'A Python-based tool for exporting modular online product documentation into structured PDF manuals.',
     stack: 'Python · Playwright · pypdf',
-    link: '/learn/projects-case-studies/pdf-exporter',
+    link: '/learn/documentation-engineering/projects/overview',
   },
   {
     status: 'Case Study',
-    title: 'Technical Documentation Redesign',
+    title: 'Stripe API Documentation',
     description:
-      'A practical case study on improving information architecture, navigation, and task-based content.',
-    stack: 'Content Design · IA · UX Writing',
-    link: '/doc-reviews',
+      'An analysis of Stripe’s developer documentation, focusing on information architecture, API reference design, task-oriented guidance, and developer experience.',
+    stack: 'API Documentation · Content Design · DX',
+    link: '/learn/technical-writing/reviews/stripe-api-documentation-case-study',
   },
   {
     status: 'Planned',
     title: 'AI Documentation Assistant',
     description:
-      'An experimental assistant for searching documentation, explaining technical concepts, and supporting content QA.',
+      'An experimental assistant for searching documentation, explaining technical concepts, and supporting content quality checks.',
     stack: 'Python · LLM · RAG',
-    link: '/learn/projects-case-studies/ai-documentation-assistant',
+    link: '/learn/ai-engineering/projects/overview',
   },
 ];
 
@@ -59,7 +66,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title="Technical Writing & AI"
-      description="A practical learning and project portfolio at the intersection of technical writing, documentation engineering, and AI."
+      description="A practical learning and project portfolio covering technical writing, documentation engineering, AI engineering, and AI product experience."
     >
       <main>
         {/* Hero */}
@@ -78,15 +85,15 @@ export default function Home(): JSX.Element {
             </p>
 
             <p className={styles.heroText}>
-              Exploring how clear technical communication, documentation
-              engineering, and AI can work together to make complex information
-              easier to understand and use.
+              Exploring how technical communication, documentation
+              engineering, and artificial intelligence can make complex
+              information and technology easier to understand, use, and build.
             </p>
 
             <div className={styles.actions}>
               <Link
                 className="button button--primary button--lg"
-                to="/learn/fundamentals/overview"
+                to="/learn/technical-writing/learn/overview"
               >
                 Explore the Learning Hub
               </Link>
@@ -107,8 +114,8 @@ export default function Home(): JSX.Element {
             <p className={styles.eyebrow}>WHAT I EXPLORE</p>
             <Heading as="h2">Areas of Focus</Heading>
             <p>
-              Three connected areas, approached through practical learning
-              and hands-on projects.
+              Four connected disciplines explored through systematic learning,
+              real-world case studies, and hands-on projects.
             </p>
           </div>
 
@@ -131,37 +138,37 @@ export default function Home(): JSX.Element {
           </div>
         </section>
 
-        {/* Projects */}
+        {/* Selected Work */}
         <section className={styles.projectSection}>
           <div className="container">
             <div className={styles.sectionIntro}>
-              <p className={styles.eyebrow}>LEARNING BY BUILDING</p>
-              <Heading as="h2">Projects & Case Studies</Heading>
+              <p className={styles.eyebrow}>PUTTING KNOWLEDGE INTO PRACTICE</p>
+              <Heading as="h2">Selected Work</Heading>
               <p>
-                Experiments and real-world work that turn concepts into
-                demonstrable skills.
+                Projects and case studies that demonstrate practical
+                implementation, critical analysis, and continuous improvement.
               </p>
             </div>
 
             <div className={styles.projectGrid}>
-              {projects.map((project) => (
+              {selectedWork.map((item) => (
                 <article
                   className={styles.projectCard}
-                  key={project.title}
+                  key={item.title}
                 >
                   <span className={styles.status}>
-                    {project.status}
+                    {item.status}
                   </span>
 
-                  <Heading as="h3">{project.title}</Heading>
+                  <Heading as="h3">{item.title}</Heading>
 
-                  <p>{project.description}</p>
+                  <p>{item.description}</p>
 
                   <p className={styles.stack}>
-                    {project.stack}
+                    {item.stack}
                   </p>
 
-                  <Link to={project.link}>
+                  <Link to={item.link}>
                     View Details →
                   </Link>
                 </article>
@@ -170,26 +177,27 @@ export default function Home(): JSX.Element {
           </div>
         </section>
 
-        {/* Documentation Reviews */}
+        {/* Reviews */}
         <section className={`container ${styles.splitSection}`}>
           <div>
-            <p className={styles.eyebrow}>THINK CRITICALLY</p>
+            <p className={styles.eyebrow}>LEARN FROM REAL-WORLD EXAMPLES</p>
 
             <Heading as="h2">
-              Documentation Reviews
+              Reviews & Case Studies
             </Heading>
 
             <p>
-              Examine real documentation from the perspective of usability,
-              structure, task completion, terminology, and content quality.
-              Identify issues and propose evidence-based improvements.
+              Examine how companies design their products, documentation,
+              engineering systems, and AI experiences. Analyze their
+              approaches, identify strengths and limitations, extract
+              transferable lessons, and explore opportunities for improvement.
             </p>
 
             <Link
               className="button button--outline button--secondary"
-              to="/doc-reviews"
+              to="/learn/technical-writing/reviews/stripe-api-documentation-case-study"
             >
-              Explore Doc Reviews
+              Explore Case Studies
             </Link>
           </div>
 
@@ -207,31 +215,6 @@ export default function Home(): JSX.Element {
           </div>
         </section>
 
-        {/* Insights */}
-        <section className={styles.latestSection}>
-          <div className="container">
-            <div className={styles.latestInner}>
-              <div>
-                <p className={styles.eyebrow}>NOTES & EXPERIMENTS</p>
-
-                <Heading as="h2">Latest Insights</Heading>
-
-                <p>
-                  Short articles about tools, workflows, technical
-                  communication, and AI experiments.
-                </p>
-              </div>
-
-              <Link
-                className="button button--primary"
-                to="/blog"
-              >
-                Read Insights
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* About */}
         <section className={`container ${styles.aboutSection}`}>
           <p className={styles.eyebrow}>ABOUT THIS SPACE</p>
@@ -242,8 +225,8 @@ export default function Home(): JSX.Element {
 
           <p>
             This site is a working knowledge base and professional portfolio.
-            It records what I learn, what I build, how I evaluate tools and
-            documentation, and how those experiences shape my next steps.
+            It brings together what I learn, the real-world examples I analyze,
+            the solutions I build, and the lessons I gain from each experience.
           </p>
 
           <Link to="/about">

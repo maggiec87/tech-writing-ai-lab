@@ -1,0 +1,12 @@
+Redesign an API Documentation System
+
+基于 Stripe 案例中值得借鉴的设计原则，为一个虚拟或真实的 REST API 设计一套完整文档。
+
+计划成果：
+- API Documentation Information Architecture
+- Reusable API Reference Template
+- Authentication Guide
+- Endpoint Documentation
+- Request and Response Examples
+- Error Handling Guide
+- Developer Quickstart

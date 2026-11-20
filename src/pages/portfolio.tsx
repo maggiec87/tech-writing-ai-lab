@@ -59,8 +59,8 @@ export default function Portfolio(): JSX.Element {
           <li>Debugging and workflow design</li>
         </ul>
 
-        <Link to="/learn/projects-case-studies/pdf-exporter">
-          Read Project Details →
+        <Link to="/learn/documentation-engineering/projects/overview">
+          Explore Documentation Engineering Projects →
         </Link>
 
         <hr />
@@ -95,9 +95,7 @@ export default function Portfolio(): JSX.Element {
           prioritized issues, before-and-after examples, and recommendations.
         </p>
 
-        <Link to="/doc-reviews">
-          Explore Documentation Reviews →
-        </Link>
+        <span>View Case Study</span>
 
         <hr />
 
@@ -135,8 +133,8 @@ export default function Portfolio(): JSX.Element {
           <li>Practical usefulness for documentation search and QA.</li>
         </ul>
 
-        <Link to="/learn/projects-case-studies/ai-documentation-assistant">
-          Read Project Plan →
+        <Link to="/learn/ai-engineering/projects/overview">
+          Explore AI Engineering Projects →
         </Link>
 
         <hr />
